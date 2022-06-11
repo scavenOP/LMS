@@ -21,7 +21,7 @@ namespace LMS.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Author> Authors { get; set; }
-        public DbSet<Catagory> Catagorys { get; set; }
+
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<User> User { get; set; }

@@ -108,3 +108,4 @@ E:\visual studio projects\LMS\LMS\obj\Debug\LMS.dll
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.pdb
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.initialmodel.resources
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.csproj.GenerateResource.cache
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.changechatagorydatatype.resources
