@@ -1,12 +1,11 @@
-﻿using System;
+﻿using LMS.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using LMS.Models;
 
 namespace LMS.Controllers
 {
@@ -32,9 +31,9 @@ namespace LMS.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -72,6 +71,11 @@ namespace LMS.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+            if (User.IsInRole("admin"))
+            {
+                return View("Admin_Manage", model);
+
+            }
             return View(model);
         }
 
@@ -333,7 +337,7 @@ namespace LMS.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -384,6 +388,6 @@ namespace LMS.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

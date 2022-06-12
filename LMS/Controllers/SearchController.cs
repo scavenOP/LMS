@@ -19,9 +19,16 @@ namespace LMS.Controllers
         {
             return View();
         }
+        [Authorize]
         public ActionResult Book()
         {
             var Books = _context.Books.ToList();
+            if (User.IsInRole("Staff"))
+            {
+
+                return View("Staff_Book", Books);
+            }
+
             return View(Books);
         }
         public ActionResult DisplayBook(int id)

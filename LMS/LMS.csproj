@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AddController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RentController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -261,6 +262,10 @@
     <Content Include="Views\Search\Author.cshtml" />
     <Content Include="Views\Search\DisplayAuthor.cshtml" />
     <Content Include="Views\Add\Author.cshtml" />
+    <Content Include="Views\Rent\Index.cshtml" />
+    <Content Include="Views\Search\Staff_Book.cshtml" />
+    <Content Include="Views\Manage\Admin_Manage.cshtml" />
+    <Content Include="Views\Account\Register_Staff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
