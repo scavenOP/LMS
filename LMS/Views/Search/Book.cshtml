@@ -4,11 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<button type="button" class="btn btn-primary mt-3" onclick="location.href='@Url.Action("Book", "Add")'">Add Book</button>
+
 <h2>Books</h2>
+
 
 
 @foreach (var Book in Model)
 {
-     @Book.Name;
+     @Html.ActionLink(Book.Name,"DisplayBook","Search",new { id = Book.Id },null) <br />
 }
 

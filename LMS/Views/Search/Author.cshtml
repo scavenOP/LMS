@@ -1,0 +1,18 @@
+﻿@model IEnumerable<LMS.Models.Author>
+@{
+    ViewBag.Title = "Author";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<button type="button" class="btn btn-primary mt-3" onclick="location.href='@Url.Action("Author", "Add")'">Add Author</button>
+
+<h2>Authors</h2>
+
+
+
+@foreach (var Author in Model)
+{
+    @Html.ActionLink(Author.Name, "DisplayAuthor", "Search", new { id = Author.Id }, null)
+    <br />
+}
+

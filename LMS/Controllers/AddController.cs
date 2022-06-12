@@ -75,5 +75,16 @@ namespace LMS.Controllers
 
             return View("Book");
         }
+        public ActionResult Author()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Author(Author author)
+        {
+            _context.Authors.Add(author);
+            _context.SaveChanges();
+            return View();
+        }
     }
 }

@@ -1,0 +1,20 @@
+﻿@model LMS.ViewModel.AuthorDisplayViewModel
+@{
+    ViewBag.Title = "DisplayAuthor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2><b> @Model.Author.Name</b></h2>
+
+Books Written By @Model.Author.Name :
+
+<ul>
+    @foreach (var book in Model.Books)
+    {
+    <li>
+        @Html.ActionLink(book.Name, "DisplayBook", "Search", new { id = book.Id }, null) <br />
+    </li>
+    }
+</ul> 
+

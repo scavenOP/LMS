@@ -1,0 +1,29 @@
+﻿@model LMS.ViewModel.BookDisplayViewModel
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><b> @Model.Book.Name</b></h2>
+
+<h3>Author : @Html.ActionLink(Model.Book.Author.Name, "DisplayAuthor", "Search", new { id = Model.Book.Author.Id }, null)</h3>
+
+<h3>Book Category : @Model.Book.Catagory</h3>
+
+<h3>Publisher : @Model.Book.Publisher.Name</h3>
+
+<h3>Price : @Model.Book.Price</h3>
+
+
+<h2><b><u>Related Books :</u></b></h2>
+
+<ul>
+    @foreach (var book in Model.RelatedBooks)
+    {
+        if (book.Name != Model.Book.Name)
+        {
+            <li>@Html.ActionLink(book.Name, "DisplayBook", "Search", new { id = book.Id }, null)</li>
+        }
+
+    }
+</ul>

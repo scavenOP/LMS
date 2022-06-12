@@ -1,0 +1,17 @@
+﻿@model LMS.Models.Author
+@{
+    ViewBag.Title = "Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Enter Author Details</h2>
+@using (Html.BeginForm("Author", "Add"))
+{
+    <div class="form-group">
+        @Html.LabelFor(b => b.Name)
+        @Html.TextBoxFor(b => b.Name)
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+
