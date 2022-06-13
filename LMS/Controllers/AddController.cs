@@ -36,6 +36,7 @@ namespace LMS.Controllers
             {
                 Author author = new Author();
                 author.Name = book.Author.Name;
+
                 _context.Authors.Add(author);
                 _context.SaveChanges();
                 System.Diagnostics.Debug.WriteLine("author added");

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace LMS.Controllers
 {
+    [Authorize]
     public class SearchController : Controller
     {
         private ApplicationDbContext _context;
@@ -19,7 +20,7 @@ namespace LMS.Controllers
         {
             return View();
         }
-        [Authorize]
+
         public ActionResult Book()
         {
             var Books = _context.Books.ToList();
@@ -44,6 +45,11 @@ namespace LMS.Controllers
         public ActionResult Author()
         {
             var Authors = _context.Authors.ToList();
+            if (User.IsInRole("Staff"))
+            {
+
+                return View("Staff_Author", Authors);
+            }
             return View(Authors);
 
         }

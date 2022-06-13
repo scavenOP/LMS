@@ -13,6 +13,17 @@
 <h3>Publisher : @Model.Book.Publisher.Name</h3>
 
 <h3>Price : @Model.Book.Price</h3>
+@if (Model.Book.Quantity!=0)
+{
+<h3>Available Peices : @Model.Book.Quantity</h3>
+
+<button type="button" class="btn btn-primary mt-3" onclick="location.href='@Url.Action("Book", "Rent", new {id=Model.Book.Id})'">Rent Book</button>
+}
+else
+            {
+                <h3>Not Available Right Now</h3>
+            }
+
 
 
 <h2><b><u>Related Books :</u></b></h2>

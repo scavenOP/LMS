@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Staff";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Staff</h2>
+
+<div class="container">
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("Book", "Add")'">Add Book</button>
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("Author", "Add")'">Add Author</button>
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("AuthorsToBeUpdated", "Dashboard")'">Pending Authors to Add (@ViewBag.Count)</button>
+    <button class="btn btn-primary">Add Publisher</button>
+
+
+</div>
+

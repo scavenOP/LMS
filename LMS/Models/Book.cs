@@ -12,5 +12,6 @@
         public Publisher Publisher { get; set; }
         public int PublisherId { get; set; }
         public long Price { get; set; }
+        public int Quantity { get; set; }
     }
 }

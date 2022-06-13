@@ -1,0 +1,31 @@
+﻿@model LMS.Models.Reports
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Rent @ViewBag.bookName</h2>
+
+@using (Html.BeginForm())
+{
+    <input data-val="true" data-val-number="The field BookId must be a number." data-val-required="The BookId field is required." id="BookId" name="BookId" type="hidden" value=@ViewBag.bookId>
+   // @Html.HiddenFor(b => b.BookId, new { value = ViewBag.bookId })
+    <div class="form-group">
+        @Html.LabelFor(b => b.user_mail)
+        @Html.TextBoxFor(b => b.user_mail)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.IssueDate)
+        @Html.TextBox("IssueDate", DateTime.Now.ToShortDateString(), "{0:yyyy-MM-dd}", new { @style = "width:100%", type = "date" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.ReturnDate)
+        @Html.TextBox("ReturnDate", DateTime.Now.ToShortDateString(), "{0:yyyy-MM-dd}", new { @style = "width:100%", type = "date" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}
+
+
+

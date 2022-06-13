@@ -109,3 +109,7 @@ E:\visual studio projects\LMS\LMS\obj\Debug\LMS.pdb
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.initialmodel.resources
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.csproj.GenerateResource.cache
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.changechatagorydatatype.resources
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.adddetailstoauthor.resources
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.correctioninauthor.resources
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.correctioninBook.resources
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.correctioninReport.resources

@@ -170,10 +170,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RentController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\UpdateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +186,22 @@
     <Compile Include="Migrations\202206111648063_changechatagorydatatype.cs" />
     <Compile Include="Migrations\202206111648063_changechatagorydatatype.designer.cs">
       <DependentUpon>202206111648063_changechatagorydatatype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206130317104_adddetailstoauthor.cs" />
+    <Compile Include="Migrations\202206130317104_adddetailstoauthor.designer.cs">
+      <DependentUpon>202206130317104_adddetailstoauthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206130420183_correctioninauthor.cs" />
+    <Compile Include="Migrations\202206130420183_correctioninauthor.designer.cs">
+      <DependentUpon>202206130420183_correctioninauthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206130520304_correctioninBook.cs" />
+    <Compile Include="Migrations\202206130520304_correctioninBook.designer.cs">
+      <DependentUpon>202206130520304_correctioninBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206130551227_correctioninReport.cs" />
+    <Compile Include="Migrations\202206130551227_correctioninReport.designer.cs">
+      <DependentUpon>202206130551227_correctioninReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -262,10 +280,15 @@
     <Content Include="Views\Search\Author.cshtml" />
     <Content Include="Views\Search\DisplayAuthor.cshtml" />
     <Content Include="Views\Add\Author.cshtml" />
-    <Content Include="Views\Rent\Index.cshtml" />
+    <Content Include="Views\Rent\Book.cshtml" />
     <Content Include="Views\Search\Staff_Book.cshtml" />
     <Content Include="Views\Manage\Admin_Manage.cshtml" />
     <Content Include="Views\Account\Register_Staff.cshtml" />
+    <Content Include="Views\Search\Staff_Author.cshtml" />
+    <Content Include="Views\Dashboard\Staff.cshtml" />
+    <Content Include="Views\Update\Author.cshtml" />
+    <Content Include="Views\Dashboard\AuthorsToBeUpdated.cshtml" />
+    <Content Include="Views\Dashboard\User.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -289,6 +312,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206111648063_changechatagorydatatype.resx">
       <DependentUpon>202206111648063_changechatagorydatatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206130317104_adddetailstoauthor.resx">
+      <DependentUpon>202206130317104_adddetailstoauthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206130420183_correctioninauthor.resx">
+      <DependentUpon>202206130420183_correctioninauthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206130520304_correctioninBook.resx">
+      <DependentUpon>202206130520304_correctioninBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206130551227_correctioninReport.resx">
+      <DependentUpon>202206130551227_correctioninReport.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
