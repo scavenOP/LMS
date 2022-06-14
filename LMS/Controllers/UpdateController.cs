@@ -29,5 +29,12 @@ namespace LMS.Controllers
             _context.SaveChanges();
             return Redirect("/Dashboard/Staff");
         }
+        public ActionResult DeleteBook(int id)
+        {
+            var book = _context.Books.SingleOrDefault(a => a.Id == id);
+            _context.Books.Remove(book);
+            _context.SaveChanges();
+            return Redirect("/Search/Book");
+        }
     }
 }

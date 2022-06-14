@@ -8,9 +8,35 @@
 <h2>Books</h2>
 
 
+<form action="/Search/Book" method="post" class="d-flex ">
+    
+    <input class="form-control me-2" id="search" name="search" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+<br />
+<br />
 
-@foreach (var Book in Model)
-{
-     @Html.ActionLink(Book.Name,"DisplayBook","Search",new { id = Book.Id },null) <br />
-}
+    @if (ViewBag.Item != null)
+    {
+        <h2>@ViewBag.Item Not Found , Try to check the spelling . </h2>
+    }
+    else
+    {
+        <table class="table table-bordered table-hover">
+
+            <tbody>
+                @foreach (var Book in Model)
+                {
+                    <tr>
+                        <th> @Book.Name</th>
+                        <th> @Html.ActionLink("Info", "DisplayBook", "Search", new { id = Book.Id }, null)</th>
+                        <th> @Html.ActionLink("Rent", "Book", "Rent", new { id = Book.Id }, null)</th>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+
 

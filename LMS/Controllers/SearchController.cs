@@ -32,6 +32,24 @@ namespace LMS.Controllers
 
             return View(Books);
         }
+        [HttpPost]
+        public ActionResult Book(string search)
+        {
+            var result = _context.Books.Where(b => b.Name == search);
+            if (result.Count() > 0)
+            {
+
+                if (User.IsInRole("Staff"))
+                {
+
+                    return View("Staff_Book", result);
+                }
+
+                return View(result);
+            }
+            ViewBag.Item = "Book";
+            return View();
+        }
         public ActionResult DisplayBook(int id)
         {
             BookDisplayViewModel viewModel = new BookDisplayViewModel();
