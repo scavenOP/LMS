@@ -27,12 +27,20 @@
             <tbody>
                 @foreach (var Book in Model)
                 {
-                    <tr>
-                        <th> @Book.Name</th>
-                        <th> @Html.ActionLink("Info", "DisplayBook", "Search", new { id = Book.Id }, null)</th>
-                        <th> @Html.ActionLink("Rent", "Book", "Rent", new { id = Book.Id }, null)</th>
+                <tr>
+                    <th> @Book.Name</th>
+                    <th> @Html.ActionLink("Info", "DisplayBook", "Search", new { id = Book.Id }, null)</th>
 
-                    </tr>
+                    @if (Book.Quantity != 0)
+                    {
+                        <th> @Html.ActionLink("Rent", "Book", "Rent", new { id = Book.Id }, null)</th>
+                    }
+                    else
+                    {
+                        <th> Out Of Stock </th>
+                    }
+
+                </tr>
                 }
             </tbody>
         </table>

@@ -289,6 +289,7 @@
     <Content Include="Views\Update\Author.cshtml" />
     <Content Include="Views\Dashboard\AuthorsToBeUpdated.cshtml" />
     <Content Include="Views\Dashboard\User.cshtml" />
+    <Content Include="Views\Search\Reports.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

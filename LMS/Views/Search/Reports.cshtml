@@ -1,0 +1,28 @@
+﻿@model IEnumerable<LMS.Models.Reports>
+@{
+    ViewBag.Title = "Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reports</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>User Mail</th>
+            <th>Issue Date</th>
+            <th>Return Date</th>
+        </tr>
+    </thead>
+    @foreach (var report in Model)
+    {
+        <tr>
+            <th>@report.Book.Name</th>
+            <th>@report.user_mail</th>
+            <th>@report.IssueDate.ToString("dd/M/yyyy")</th>
+            <th>@report.ReturnDate.ToString("dd/M/yyyy")</th>
+        </tr>
+    }
+</table>
+

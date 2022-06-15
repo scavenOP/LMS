@@ -78,5 +78,11 @@ namespace LMS.Controllers
             model.Books = _context.Books.Where(b => b.AuthorId == id).ToList();
             return View(model);
         }
+
+        public ActionResult Reports()
+        {
+            var reports = _context.Reports.Include(r => r.Book).ToList();
+            return View(reports);
+        }
     }
 }

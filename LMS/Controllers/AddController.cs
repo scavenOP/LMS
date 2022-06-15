@@ -74,7 +74,7 @@ namespace LMS.Controllers
             _testcontext.Books.Add(book);
             _testcontext.SaveChanges();
 
-            return View("Book");
+            return Redirect("/Search/Book");
         }
         public ActionResult Author()
         {
