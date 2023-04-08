@@ -1,4 +1,5 @@
 ﻿using LMS.Models;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -36,6 +37,7 @@ namespace LMS.Controllers
             {
                 Author author = new Author();
                 author.Name = book.Author.Name;
+                author.DOB = DateTime.Now;
 
                 _context.Authors.Add(author);
                 _context.SaveChanges();

@@ -24,6 +24,8 @@ namespace LMS.Controllers
         public ActionResult Book()
         {
             var Books = _context.Books.ToList();
+            
+
             if (User.IsInRole("Staff"))
             {
 

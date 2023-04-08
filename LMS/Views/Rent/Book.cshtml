@@ -4,12 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2> Rent @ViewBag.bookName</h2>
+<h2> Rent </h2>
 
 @using (Html.BeginForm())
 {
-    <input data-val="true" data-val-number="The field BookId must be a number." data-val-required="The BookId field is required." id="BookId" name="BookId" type="hidden" value=@ViewBag.bookId>
-   // @Html.HiddenFor(b => b.BookId, new { value = ViewBag.bookId })
+    <div class="form-group">
+        @Html.LabelFor(b => b.BookId)
+        @Html.TextBoxFor(b => b.BookId)
+    </div>
+    // @Html.HiddenFor(b => b.BookId, new { value = ViewBag.bookId })
     <div class="form-group">
         @Html.LabelFor(b => b.user_mail)
         @Html.TextBoxFor(b => b.user_mail)

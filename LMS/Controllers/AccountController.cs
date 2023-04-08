@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -14,9 +15,12 @@ namespace LMS.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext _context;
+        
 
         public AccountController()
         {
+            _context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -148,10 +152,19 @@ namespace LMS.Controllers
         {
             if (ModelState.IsValid)
             {
+                
+                
+
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    User Iuser = new User();
+                    Iuser.Email = model.Email;
+                    Iuser.booksissued = 0;
+                    _context.User.Add(Iuser);
+                    _context.SaveChanges();
+
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     //temp code

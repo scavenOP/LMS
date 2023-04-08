@@ -20,6 +20,28 @@ namespace LMS.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        public DbSet<Car> Cars { get; set; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public DbSet<Author> Authors { get; set; }
 
         public DbSet<Publisher> Publishers { get; set; }

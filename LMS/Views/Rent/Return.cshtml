@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LMS.Models.Reports>
+@{
+    ViewBag.Title = "Return";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Return</h2>
+
+
+
+
+
+
+<table id="return-table" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>User Name</th>
+            <th>Return Date</th>
+            <th>   </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.Book.Name</td>
+                <td>@report.user_mail</td>
+                <td>@report.ReturnDate.Date</td>
+                <td>@Html.ActionLink("Return", "Returned", "Rent", new {id = report.Id}, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#return-table").DataTable();
+        })
+    </script>
+}
+
+

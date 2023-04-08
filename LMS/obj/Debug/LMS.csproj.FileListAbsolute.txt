@@ -113,3 +113,7 @@ E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.adddetailstoauthor.re
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.correctioninauthor.resources
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.correctioninBook.resources
 E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.correctioninReport.resources
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.AddedVehicle.resources
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.DeletedColorField.resources
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.userchanged.resources
+E:\visual studio projects\LMS\LMS\obj\Debug\LMS.Migrations.userchanged1.resources

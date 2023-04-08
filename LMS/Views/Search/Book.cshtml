@@ -8,22 +8,17 @@
 <h2>Books</h2>
 
 
-<form action="/Search/Book" method="post" class="d-flex ">
-    
-    <input class="form-control me-2" id="search" name="search" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-<br />
-<br />
 
-    @if (ViewBag.Item != null)
-    {
-        <h2>@ViewBag.Item Not Found , Try to check the spelling . </h2>
-    }
-    else
-    {
-        <table class="table table-bordered table-hover">
 
+        <table id="book-table" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Info</th>
+                    <th>Avaibility</th>
+                    
+                </tr>
+            </thead>
             <tbody>
                 @foreach (var Book in Model)
                 {
@@ -33,7 +28,7 @@
 
                     @if (Book.Quantity != 0)
                     {
-                        <th> @Html.ActionLink("Rent", "Book", "Rent", new { id = Book.Id }, null)</th>
+                        <th> Available </th>
                     }
                     else
                     {
@@ -44,7 +39,15 @@
                 }
             </tbody>
         </table>
-    }
+  
+@section scripts
+{
+<script>
+    $(document).ready(function () {
+        $("#book-table").DataTable();
+    })
+</script>
+ }
 
 
 
